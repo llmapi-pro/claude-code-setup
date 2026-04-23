@@ -78,6 +78,14 @@ To switch back to the default backend, just `unset ANTHROPIC_BASE_URL`.
 
 More background on the relay model: [llmapi.pro/blog](https://llmapi.pro/blog).
 
+## Recommended extensions
+
+Once you have Claude Code running, consider these workflow add-ons:
+
+- **[claude-next](https://github.com/llmapi-pro/claude-next)** — One-key handoff between deep Claude Code sessions. When a long conversation starts hallucinating past ~400K tokens, `/next` in the old window produces an audited handoff; paste `continue A` in a new window to resume instantly. `npx claude-next install`.
+- [claude-md-templates](https://github.com/llmapi-pro/claude-md-templates) — Drop-in `CLAUDE.md` templates tuned for popular stacks (Next.js, FastAPI, Go, Rust, etc.).
+- [awesome-claude-code](https://github.com/llmapi-pro/awesome-claude-code) — Curated list of other high-quality Claude Code tools and guides.
+
 ## Related blogs
 
 - [Fix Claude Code 429 "Rate Limit Exceeded": Complete Triage Guide](https://llmapi.pro/blog/fix-claude-code-429-rate-limit-exceeded)
