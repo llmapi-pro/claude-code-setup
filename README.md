@@ -78,6 +78,30 @@ To switch back to the default backend, just `unset ANTHROPIC_BASE_URL`.
 
 More background on the relay model: [llmapi.pro/blog](https://llmapi.pro/blog).
 
+## Also works with OpenAI-style clients (Codex CLI, OpenAI SDK, LiteLLM)
+
+The same API key works with OpenAI-shape clients via the alternative endpoints:
+
+- `https://llmapi.pro/v1/chat/completions` — OpenAI Chat Completions (OpenAI SDK, LiteLLM, older Codex versions)
+- `https://llmapi.pro/v1/responses` — OpenAI Responses API (Codex CLI `0.130+`)
+
+Codex CLI example (`~/.codex/config.toml`):
+
+```toml
+model = "claude-sonnet-4-7"
+model_provider = "llmapi"
+
+[model_providers.llmapi]
+name = "llmapi"
+base_url = "https://llmapi.pro/v1"
+wire_api = "responses"
+env_key = "OPENAI_API_KEY"
+```
+
+Then `export OPENAI_API_KEY=sk-relay-your-key-here && codex exec "..."`.
+
+Full Codex / OpenAI SDK / LiteLLM walkthrough: [llmapi.pro/docs#openai-compat](https://llmapi.pro/docs#openai-compat).
+
 ## Recommended extensions
 
 Once you have Claude Code running, consider these workflow add-ons:
